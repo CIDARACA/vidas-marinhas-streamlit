@@ -44,6 +44,9 @@ st.markdown(
     .source { color:#638087; font-size:.78rem; }
     .quote { border-left:5px solid var(--aqua); background:#e8f8f5; padding:1rem 1.2rem; border-radius:0 14px 14px 0; font-style:italic; }
     .footer { margin-top:3rem; padding:1.3rem 0; color:#638087; border-top:1px solid #cfe3e0; font-size:.85rem; }
+    .academic-header { background:#ffffff; border-left:5px solid var(--teal); padding:1rem 1.25rem; margin-bottom:1.25rem; border-radius:0 14px 14px 0; box-shadow:0 7px 20px rgba(6,43,58,.06); }
+    .academic-header h2 { color:var(--deep); font-family:'DM Sans', sans-serif; font-size:1.15rem; line-height:1.3; margin:0 0 .35rem; }
+    .academic-header p { color:var(--ink); margin:.2rem 0; font-size:.9rem; line-height:1.45; }
     /* O tema claro é o padrão do projeto. Estas regras também tornam o modo escuro legível. */
     [data-theme="dark"] {
         --deep:#d7f8f3;
@@ -59,6 +62,8 @@ st.markdown(
     [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
     [data-theme="dark"] p, [data-theme="dark"] li,
     [data-theme="dark"] [data-testid="stMarkdownContainer"] { color:var(--ink); }
+    [data-theme="dark"] .academic-header { background:#102f3d; border-color:#62e5db; }
+    [data-theme="dark"] .academic-header h2, [data-theme="dark"] .academic-header p { color:#e8f6f4; }
     [data-theme="dark"] .hero { background:linear-gradient(135deg, #061b27 0%, #075b63 100%); }
     [data-theme="dark"] .hero h1 { color:#ffffff !important; }
     [data-theme="dark"] .hero p { color:#f0fffd !important; }
@@ -213,7 +218,12 @@ if page == "Início":
 
 elif page == "Sobre":
     st.markdown("<div class='eyebrow'>Sobre o projeto</div><h1>Conhecer para proteger</h1>", unsafe_allow_html=True)
-    st.markdown("<div class='card'><h3>Desenvolvimento Web na Prática: Construindo a Plataforma Vidas Marinhas</h3><p><strong>Integração de Interface em Python e Armazenamento de Dados em Tempo Real no Firebase</strong></p><p><strong>Autoras:</strong> Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo</p><p><strong>CBSoft’26 · Centro Brasileiro de Software</strong></p><p><strong>CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos</strong></p></div>", unsafe_allow_html=True)
+    st.subheader("Identificação do projeto")
+    st.markdown("**Desenvolvimento Web na Prática: Construindo a Plataforma Vidas Marinhas**")
+    st.write("Integração de Interface em Python e Armazenamento de Dados em Tempo Real no Firebase")
+    st.write("**Autoras:** Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo")
+    st.write("**CBSoft’26 · Centro Brasileiro de Software**")
+    st.write("**CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos**")
     st.write("Vidas Marinhas é uma plataforma educativa criada para aproximar ciência, tecnologia e conservação dos oceanos.")
     about_left, about_right = st.columns([1, 1])
     with about_left:
