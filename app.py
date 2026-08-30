@@ -224,6 +224,7 @@ elif page == "Sobre":
     st.write("**Autoras:** Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo")
     st.write("**CBSoft’26 · Centro Brasileiro de Software**")
     st.write("**CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos**")
+    st.write("**Orientador: Prof. Paulo Souza**")
     st.write("Vidas Marinhas é uma plataforma educativa criada para aproximar ciência, tecnologia e conservação dos oceanos.")
     about_left, about_right = st.columns([1, 1])
     with about_left:
@@ -354,4 +355,4 @@ elif page == "Contato":
             else:
                 st.caption("Registro enviado ao Firestore em tempo real.")
 
-st.markdown("<div class='footer'>Vidas Marinhas · Projeto Final CBSoft’26 · CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos · Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo.</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Vidas Marinhas · Projeto Final CBSoft’26 · CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos · Orientador: Prof. Paulo Souza · Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo.</div>", unsafe_allow_html=True)
