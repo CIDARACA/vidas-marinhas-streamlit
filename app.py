@@ -15,7 +15,7 @@ DATA_DIR.mkdir(exist_ok=True)
 QUESTIONS_FILE = DATA_DIR / "duvidas.jsonl"
 
 st.set_page_config(
-    page_title="Vidas Marinhas | Aprender para proteger",
+    page_title="Desenvolvimento Web na Prática | Vidas Marinhas",
     page_icon="🌊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -44,6 +44,37 @@ st.markdown(
     .source { color:#638087; font-size:.78rem; }
     .quote { border-left:5px solid var(--aqua); background:#e8f8f5; padding:1rem 1.2rem; border-radius:0 14px 14px 0; font-style:italic; }
     .footer { margin-top:3rem; padding:1.3rem 0; color:#638087; border-top:1px solid #cfe3e0; font-size:.85rem; }
+    /* O tema claro é o padrão do projeto. Estas regras também tornam o modo escuro legível. */
+    [data-theme="dark"] {
+        --deep:#d7f8f3;
+        --teal:#62e5db;
+        --aqua:#65e7df;
+        --sand:#0a202b;
+        --ink:#e8f6f4;
+        --surface:#102f3d;
+        --surface-2:#153d4b;
+        --muted:#b7cfcd;
+    }
+    [data-theme="dark"] .stApp { background:linear-gradient(180deg, #081d28 0%, #0d2a36 100%); }
+    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+    [data-theme="dark"] p, [data-theme="dark"] li,
+    [data-theme="dark"] [data-testid="stMarkdownContainer"] { color:var(--ink); }
+    [data-theme="dark"] .hero { background:linear-gradient(135deg, #061b27 0%, #075b63 100%); }
+    [data-theme="dark"] .hero h1 { color:#ffffff !important; }
+    [data-theme="dark"] .hero p { color:#f0fffd !important; }
+    [data-theme="dark"] .card { background:var(--surface); border-color:#2a5965; }
+    [data-theme="dark"] .metric { background:var(--surface); border-color:var(--aqua); }
+    [data-theme="dark"] .metric strong { color:var(--teal); }
+    [data-theme="dark"] .quote { background:#123b46; color:#e8f6f4; }
+    [data-theme="dark"] .source, [data-theme="dark"] .footer { color:var(--muted); }
+    [data-theme="dark"] [data-testid="stWidgetLabel"] p,
+    [data-theme="dark"] [data-testid="stCaptionContainer"] p { color:#c5ddda !important; }
+    [data-theme="dark"] input, [data-theme="dark"] textarea,
+    [data-theme="dark"] [data-baseweb="input"] input,
+    [data-theme="dark"] [data-baseweb="textarea"] textarea { color:#f4fffd !important; }
+    [data-theme="dark"] [data-baseweb="input"] > div,
+    [data-theme="dark"] [data-baseweb="textarea"] > div { background:#153d4b !important; border-color:#4c8183 !important; }
+    [data-theme="dark"] [data-testid="stAlert"] { background:#173d4b; color:#e8f6f4; }
     @media (max-width: 640px) {
         .hero { padding:1.6rem 1.25rem; border-radius:18px; background:linear-gradient(145deg, #062b3a 0%, #0b6870 100%); }
         .hero h1 { font-size:2.45rem !important; line-height:1.05; }
@@ -51,6 +82,7 @@ st.markdown(
         .pill { font-size:.72rem; padding:.3rem .55rem; }
         .card, .metric { padding:1rem; }
         .metric strong { font-size:1.5rem; }
+        [data-theme="dark"] .hero { background:linear-gradient(145deg, #061b27 0%, #075b63 100%); }
     }
     </style>
     """,
@@ -155,7 +187,8 @@ with st.sidebar:
     st.markdown("**Público-alvo**")
     st.caption("Estudantes, professores e pessoas interessadas na conservação dos oceanos.")
     st.markdown("**Projeto educacional**")
-    st.caption("Desenvolvimento Web na Prática · Python · Streamlit · Firestore")
+    st.caption("CBSoft’26 · Centro Brasileiro de Software")
+    st.caption("CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos")
 
 if page == "Início":
     st.markdown("<div class='hero'><div class='eyebrow'>Plataforma de educação oceânica</div><h1>O oceano começa aqui.</h1><p>Explore ecossistemas, conheça espécies e entenda as conexões que mantêm a vida marinha em equilíbrio.</p><span class='pill'>Conteúdo científico</span><span class='pill'>Aprendizagem ativa</span><span class='pill'>Conservação</span></div>", unsafe_allow_html=True)
@@ -180,6 +213,7 @@ if page == "Início":
 
 elif page == "Sobre":
     st.markdown("<div class='eyebrow'>Sobre o projeto</div><h1>Conhecer para proteger</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='card'><h3>Desenvolvimento Web na Prática: Construindo a Plataforma Vidas Marinhas</h3><p><strong>Integração de Interface em Python e Armazenamento de Dados em Tempo Real no Firebase</strong></p><p><strong>Autoras:</strong> Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo</p><p><strong>CBSoft’26 · Centro Brasileiro de Software</strong></p><p><strong>CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos</strong></p></div>", unsafe_allow_html=True)
     st.write("Vidas Marinhas é uma plataforma educativa criada para aproximar ciência, tecnologia e conservação dos oceanos.")
     about_left, about_right = st.columns([1, 1])
     with about_left:
@@ -310,4 +344,4 @@ elif page == "Contato":
             else:
                 st.caption("Registro enviado ao Firestore em tempo real.")
 
-st.markdown("<div class='footer'>Vidas Marinhas · Projeto educacional em Python e Streamlit · Conteúdo organizado para apoiar a aprendizagem e a conservação.</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Vidas Marinhas · Projeto Final CBSoft’26 · CID — Centro de Inclusão Digital Araçariguama · USP — São Carlos · Emilly Victoria Silva Cassimiro, Sarah Keifer Ribeiro e Alice Araújo.</div>", unsafe_allow_html=True)
