@@ -1,0 +1,6 @@
+firebase.json
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+data/duvidas.jsonl
