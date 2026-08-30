@@ -51,7 +51,10 @@ st.markdown(
 
 
 def image_path(name: str) -> str:
-    return str(ASSETS / name)
+    """Localiza a imagem na pasta assets ou, como fallback, na raiz do GitHub."""
+    asset_file = ASSETS / name
+    root_file = APP_DIR / name
+    return str(asset_file if asset_file.exists() else root_file)
 
 
 def save_question(name: str, email: str, question: str) -> None:
