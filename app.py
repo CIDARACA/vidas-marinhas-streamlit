@@ -32,9 +32,9 @@ st.markdown(
     [data-testid="stSidebar"] * { color: #eaf8f6 !important; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--deep); }
     [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 { color:#fff !important; }
-    .hero { padding: 2.4rem 2.8rem; border-radius: 26px; background: linear-gradient(118deg, rgba(6,43,58,.95), rgba(15,139,141,.84)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85') center/cover; color:white; margin-bottom:1.5rem; box-shadow:0 18px 45px rgba(6,43,58,.16); }
-    .hero h1 { color:white; font-size: clamp(2.3rem, 5vw, 4.6rem); margin:0; line-height:1.02; }
-    .hero p { font-size:1.15rem; max-width:660px; color:#e3fbf8; margin-top:1rem; }
+    .hero { padding: 2.4rem 2.8rem; border-radius: 26px; background: linear-gradient(135deg, #062b3a 0%, #0b6870 100%); color:#ffffff; margin-bottom:1.5rem; box-shadow:0 18px 45px rgba(6,43,58,.16); }
+    .hero h1 { color:#ffffff !important; font-size: clamp(2.3rem, 5vw, 4.6rem); margin:0; line-height:1.02; text-shadow:0 2px 8px rgba(0,0,0,.24); }
+    .hero p { font-size:1.15rem; max-width:660px; color:#f3fffd !important; margin-top:1rem; text-shadow:0 1px 3px rgba(0,0,0,.18); }
     .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; font-weight:700; color:#8ef3e9; }
     .pill { display:inline-block; background:#d8faf3; color:#086a6a; border-radius:999px; padding:.35rem .7rem; font-size:.8rem; font-weight:700; margin:.15rem .2rem .15rem 0; }
     .card { background:rgba(255,255,255,.9); border:1px solid #d9ece9; padding:1.2rem 1.3rem; border-radius:18px; height:100%; box-shadow:0 8px 26px rgba(6,43,58,.06); }
@@ -44,6 +44,14 @@ st.markdown(
     .source { color:#638087; font-size:.78rem; }
     .quote { border-left:5px solid var(--aqua); background:#e8f8f5; padding:1rem 1.2rem; border-radius:0 14px 14px 0; font-style:italic; }
     .footer { margin-top:3rem; padding:1.3rem 0; color:#638087; border-top:1px solid #cfe3e0; font-size:.85rem; }
+    @media (max-width: 640px) {
+        .hero { padding:1.6rem 1.25rem; border-radius:18px; background:linear-gradient(145deg, #062b3a 0%, #0b6870 100%); }
+        .hero h1 { font-size:2.45rem !important; line-height:1.05; }
+        .hero p { font-size:1rem; line-height:1.5; }
+        .pill { font-size:.72rem; padding:.3rem .55rem; }
+        .card, .metric { padding:1rem; }
+        .metric strong { font-size:1.5rem; }
+    }
     </style>
     """,
     unsafe_allow_html=True,
