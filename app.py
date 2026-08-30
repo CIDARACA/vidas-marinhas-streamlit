@@ -110,17 +110,33 @@ def save_question(name: str, email: str, question: str) -> None:
 
 @st.cache_resource(show_spinner=False)
 def firestore_client():
-    """Cria um cliente Firestore a partir do firebase.json privado, se existir."""
-    credentials_file = APP_DIR / "firebase.json"
-    if not credentials_file.exists():
-        return None
+    """Cria o cliente Firestore por firebase.json local ou pelos Secrets do Streamlit."""
     try:
         from google.cloud import firestore
         from google.oauth2 import service_account
-        credentials = service_account.Credentials.from_service_account_file(str(credentials_file))
-        return firestore.Client(project=credentials.project_id, credentials=credentials)
+
+        # Uso local: o arquivo privado fica fora do GitHub.
+        credentials_file = APP_DIR / "firebase.json"
+        if credentials_file.exists():
+            credentials = service_account.Credentials.from_service_account_file(str(credentials_file))
+            return firestore.Client(project=credentials.project_id, credentials=credentials)
+
+        # Deploy: credenciais ficam em Settings > Secrets no Streamlit Cloud.
+        if "gcp_service_account" in st.secrets:
+            service_account_info = dict(st.secrets["gcp_service_account"])
+            credentials = service_account.Credentials.from_service_account_info(service_account_info)
+            return firestore.Client(project=service_account_info.get("project_id"), credentials=credentials)
+
+        # Alternativa: um JSON completo pode ser armazenado como segredo FIREBASE_JSON.
+        firebase_json = st.secrets.get("FIREBASE_JSON")
+        if firebase_json:
+            import json
+            service_account_info = json.loads(str(firebase_json))
+            credentials = service_account.Credentials.from_service_account_info(service_account_info)
+            return firestore.Client(project=service_account_info.get("project_id"), credentials=credentials)
     except Exception:
         return None
+    return None
 
 
 def send_to_firebase(record: dict) -> bool:
