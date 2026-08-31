@@ -47,6 +47,26 @@ st.markdown(
     .academic-header { background:#ffffff; border-left:5px solid var(--teal); padding:1rem 1.25rem; margin-bottom:1.25rem; border-radius:0 14px 14px 0; box-shadow:0 7px 20px rgba(6,43,58,.06); }
     .academic-header h2 { color:var(--deep); font-family:'DM Sans', sans-serif; font-size:1.15rem; line-height:1.3; margin:0 0 .35rem; }
     .academic-header p { color:var(--ink); margin:.2rem 0; font-size:.9rem; line-height:1.45; }
+    /* Controles com contraste suave para a página Contato e telas menores. */
+    [data-testid="stBaseButton-primary"], button[kind="primary"], .stButton > button {
+        background:#3d918b !important; border-color:#3d918b !important; color:#ffffff !important;
+        box-shadow:none !important;
+    }
+    [data-testid="stBaseButton-primary"]:hover, button[kind="primary"]:hover, .stButton > button:hover {
+        background:#327c78 !important; border-color:#327c78 !important;
+    }
+    [data-baseweb="input"] > div, [data-baseweb="textarea"] > div {
+        background:#ffffff !important; border:1px solid #b9d8d3 !important; border-radius:10px !important;
+        box-shadow:none !important;
+    }
+    [data-baseweb="input"] input, [data-baseweb="textarea"] textarea {
+        color:#244047 !important; background:transparent !important;
+    }
+    [data-testid="stForm"] { background:#f5faf9; border:1px solid #d9ebe7; border-radius:14px; padding:1rem; }
+    [data-baseweb="tab-list"] { background:#edf6f4; border-radius:10px; padding:.2rem; gap:.25rem; }
+    [data-baseweb="tab"] { color:#457378 !important; border-radius:8px; }
+    [data-baseweb="tab"][aria-selected="true"] { background:#d8ece8; color:#246a68 !important; }
+    [data-testid="stAlert"] { border-radius:10px; }
     /* O tema claro é o padrão do projeto. Estas regras também tornam o modo escuro legível. */
     [data-theme="dark"] {
         --deep:#d7f8f3;
@@ -64,6 +84,10 @@ st.markdown(
     [data-theme="dark"] [data-testid="stMarkdownContainer"] { color:var(--ink); }
     [data-theme="dark"] .academic-header { background:#102f3d; border-color:#62e5db; }
     [data-theme="dark"] .academic-header h2, [data-theme="dark"] .academic-header p { color:#e8f6f4; }
+    [data-theme="dark"] [data-testid="stForm"] { background:#102f3d; border-color:#2a5965; }
+    [data-theme="dark"] [data-baseweb="tab-list"] { background:#102f3d; }
+    [data-theme="dark"] [data-baseweb="tab"] { color:#b7cfcd !important; }
+    [data-theme="dark"] [data-baseweb="tab"][aria-selected="true"] { background:#20545b; color:#e8f6f4 !important; }
     [data-theme="dark"] .hero { background:linear-gradient(135deg, #061b27 0%, #075b63 100%); }
     [data-theme="dark"] .hero h1 { color:#ffffff !important; }
     [data-theme="dark"] .hero p { color:#f0fffd !important; }
