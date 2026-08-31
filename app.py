@@ -34,8 +34,14 @@ st.markdown(
     .stApp [data-testid="stWidgetLabel"] p, .stApp [data-testid="stCaptionContainer"] p,
     .stApp label { color:#244047 !important; }
     .stApp h1, .stApp h2, .stApp h3 { color:#062b3a !important; }
-    [data-testid="stSidebar"] { background: var(--deep); }
-    [data-testid="stSidebar"] * { color: #eaf8f6 !important; }
+    [data-testid="stSidebar"] { background:#062b3a !important; }
+    [data-testid="stSidebar"] * { color:#eaf8f6 !important; opacity:1 !important; }
+    [data-testid="stSidebar"] [role="radiogroup"] label,
+    [data-testid="stSidebar"] [role="radiogroup"] label p,
+    [data-testid="stSidebar"] [role="radiogroup"] label span { color:#f2fffd !important; opacity:1 !important; font-weight:500; }
+    [data-testid="stSidebar"] [role="radiogroup"] label:hover { background:#15515e !important; border-radius:8px; }
+    [data-testid="stSidebar"] [data-testid="stCaptionContainer"] p { color:#bfe4df !important; opacity:1 !important; }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p { color:#f2fffd !important; opacity:1 !important; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--deep); }
     [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 { color:#fff !important; }
     .hero { padding: 2.4rem 2.8rem; border-radius: 26px; background: linear-gradient(135deg, #062b3a 0%, #0b6870 100%); color:#ffffff; margin-bottom:1.5rem; box-shadow:0 18px 45px rgba(6,43,58,.16); }
