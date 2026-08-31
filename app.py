@@ -27,7 +27,13 @@ st.markdown(
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
     :root { --deep:#062b3a; --teal:#0f8b8d; --aqua:#22c7c9; --sand:#f5f0e6; --ink:#17313b; }
     html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; color: var(--ink); }
-    .stApp { background: linear-gradient(180deg, #f7fbfa 0%, #eef7f6 100%); }
+    .stApp { background: linear-gradient(180deg, #f7fbfa 0%, #eef7f6 100%); color-scheme: light; }
+    /* O conteúdo mantém uma paleta clara e estável, independentemente do tema do menu do Streamlit. */
+    .stApp [data-testid="stMarkdownContainer"] { color:#17313b !important; }
+    .stApp [data-testid="stMarkdownContainer"] p, .stApp [data-testid="stMarkdownContainer"] li,
+    .stApp [data-testid="stWidgetLabel"] p, .stApp [data-testid="stCaptionContainer"] p,
+    .stApp label { color:#244047 !important; }
+    .stApp h1, .stApp h2, .stApp h3 { color:#062b3a !important; }
     [data-testid="stSidebar"] { background: var(--deep); }
     [data-testid="stSidebar"] * { color: #eaf8f6 !important; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--deep); }
@@ -60,8 +66,10 @@ st.markdown(
         box-shadow:none !important;
     }
     [data-baseweb="input"] input, [data-baseweb="textarea"] textarea {
-        color:#244047 !important; background:transparent !important;
+        color:#244047 !important; background:transparent !important; color-scheme:light;
     }
+    [data-baseweb="select"] > div, [data-baseweb="input"] > div, [data-baseweb="textarea"] > div,
+    [data-testid="stSelectbox"] [role="combobox"] { color-scheme:light; }
     [data-testid="stForm"] { background:#f5faf9; border:1px solid #d9ebe7; border-radius:14px; padding:1rem; }
     [data-baseweb="tab-list"] { background:#edf6f4; border-radius:10px; padding:.2rem; gap:.25rem; }
     [data-baseweb="tab"] { color:#457378 !important; border-radius:8px; }
